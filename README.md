@@ -47,3 +47,4 @@ This is my core test automation project for automation APIS and UI (on web and m
 - [Java gitignore file examples](https://github.com/github/gitignore/blob/main/Java.gitignore)
 
 - ![collaboration](/images/5893.jpg)
+  Updates
