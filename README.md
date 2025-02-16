@@ -8,9 +8,10 @@ This is my core test automation project for automation APIS and UI (on web and m
 
 ### Toolset
 
-- [ ] Java
-- [ ] Maven
-- [ ] TestNG
+- [x] Java
+- [x] Maven
+- [x] Surefire Plugin/Surefire Report Plugin
+- [x] JUnit
 - [ ] Log4j
 - [x] GitHub
 - [ ] Faker Library
@@ -18,7 +19,7 @@ This is my core test automation project for automation APIS and UI (on web and m
 - [ ] Docker
 - [ ] Sonarqube/SonarLint
 - [ ] Badges
-- [ ] Slack Integration
+- [x] Slack Integration
 
 ### Frameworks and Libraries
 
