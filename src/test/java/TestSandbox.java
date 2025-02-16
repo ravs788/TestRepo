@@ -5,12 +5,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestSandbox {
     @Test
-    void assertThatTrueIsTrue(){
+    void assertThatTrueIsTrue() throws InterruptedException{
         assertTrue(true, "true is true");
+        Thread.sleep(1000);
     }
 
     @Test
-    void assertThatDayIsDay(){
+    void assertThatDayIsDay() throws InterruptedException{
         assertEquals("day","day","true is true");
+        Thread.sleep(1000);
     }
 }
