@@ -14,6 +14,7 @@ This is my core test automation project for automation APIS and UI (on web and m
 - [x] JUnit
 - [ ] Log4j
 - [x] GitHub
+- [x] GitHub Actions
 - [ ] Faker Library
 - [ ] Elastic and Kibana
 - [ ] Docker
