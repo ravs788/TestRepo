@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -10,9 +11,23 @@ public class TestSandbox {
         Thread.sleep(1000);
     }
 
+    @Tag("failing")
     @Test
     void assertThatDayIsDay() throws InterruptedException{
-        assertEquals("day","day","true is true");
+        assertEquals("day","night","true is true");
         Thread.sleep(1000);
+    }
+
+    @Tag("flaky")
+    @Test
+    void CreateAFlakyTest(){
+        long currentTimeStamp = System.currentTimeMillis();
+        System.out.println(currentTimeStamp);
+        if(currentTimeStamp%2==0){
+            assertTrue(true, "time is even");
+        }
+        else {
+            assertTrue(false, "time is odd");
+        }
     }
 }
