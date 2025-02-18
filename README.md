@@ -1,6 +1,13 @@
 # TestRepo
 
 This is my core test automation project for automation APIS and UI (on web and mobile).
+![](https://img.shields.io/github/issues/ravs788/TestRepo)
+![](https://img.shields.io/github/forks/ravs788/TestRepo)
+![](https://img.shields.io/github/stars/ravs788/TestRepo)
+![](https://img.shields.io/github/license/ravs788/TestRepo)
+
+![](https://img.shields.io/github/actions/workflow/status/ravs788/TestRepo/Java%20CI%20with%20Maven?style=plastic&logo=Github&label=build-status
+)
 
 ## Test Goals
 
