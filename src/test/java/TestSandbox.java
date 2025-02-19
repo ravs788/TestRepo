@@ -54,8 +54,8 @@ public class TestSandbox {
         log.trace("this is a trace statement");
     }
 
-//    @Test
-    @RepeatedTest(10)
+   @Test
+    // @RepeatedTest(10)
     void assertConfigUsage(){
         final Config CONFIG = TestEnvFactory.getInstance().getConfig();
 
