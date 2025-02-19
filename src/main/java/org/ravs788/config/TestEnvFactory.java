@@ -30,10 +30,11 @@ public class TestEnvFactory {
         config = ConfigFactory.load();
 
         TestEnv testEnv = config.getEnum(TestEnv.class, "TEST_ENV");
-        String testEnvDirPath = String.format("src/main/resources/%s", testEnv);
+        String testEnvName =  testEnv.toString().toLowerCase();
+        String testEnvDirPath = String.format("src/main/resources/%s", testEnvName);
         File testEnvDir = new File(testEnvDirPath);
         for (File file: Objects.requireNonNull(testEnvDir.listFiles())){
-            Config childConf = ConfigFactory.load(String.format("%s/%s", testEnv, file.getName()));
+            Config childConf = ConfigFactory.load(String.format("%s/%s", testEnvName, file.getName()));
             config = config.withFallback(childConf);
         }
 
