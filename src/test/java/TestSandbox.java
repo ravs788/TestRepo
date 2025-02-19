@@ -1,6 +1,10 @@
+import com.typesafe.config.Config;
 import lombok.extern.slf4j.Slf4j;
+import lombok.extern.slf4j.XSlf4j;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.ravs788.config.TestEnvFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,7 +15,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Slf4j
 public class TestSandbox {
-    private static final Logger log = LoggerFactory.getLogger(TestSandbox.class);
+
+    Config CONFIG = TestEnvFactory.getInstance().getConfig();
 
     @Test
     void assertThatTrueIsTrue() throws InterruptedException{
@@ -47,5 +52,16 @@ public class TestSandbox {
         log.error("this is an error");
         log.warn("this is a warning");
         log.trace("this is a trace statement");
+    }
+
+//    @Test
+    @RepeatedTest(10)
+    void assertConfigUsage(){
+        final Config CONFIG = TestEnvFactory.getInstance().getConfig();
+
+        log.info(CONFIG.getString("TEST_ENV"));
+        log.info(CONFIG.getString("CREATE_EMPLOYEE_ENDPOINT"));
+        log.info(CONFIG.getString("ADMIN_LOGIN"));
+        log.info(CONFIG.getString("ADMIN_NAME"));
     }
 }
