@@ -1,37 +1,31 @@
 import com.typesafe.config.Config;
 import lombok.extern.slf4j.Slf4j;
-import lombok.extern.slf4j.XSlf4j;
-import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.ravs788.config.TestEnvFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.ravs788.config.annotations.FailingTest;
+import org.ravs788.config.annotations.FlakyTest;
+import org.ravs788.config.annotations.SmokeTest;
 
 import java.util.Random;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 @Slf4j
 public class TestSandbox {
 
-
-    @Test
+    @SmokeTest
     void assertThatTrueIsTrue() throws InterruptedException{
         assertTrue(true, "true is true");
         Thread.sleep(1000);
     }
 
-    @Tag("failing")
-    @Test
+    @FailingTest
     void assertThatDayIsDay() throws InterruptedException{
         assertEquals("day","night","true is true");
         Thread.sleep(1000);
     }
 
-    @Tag("flaky")
-    @Test
+    @FlakyTest
     void createAFlakyTest(){
         Random random = new Random();
         int value = random.nextInt(10000);
@@ -44,7 +38,7 @@ public class TestSandbox {
         }
     }
 
-    @Test
+    @FailingTest
     void testLogging(){
         log.info("this is an information");
         log.debug("this is a debug statement");
@@ -58,9 +52,20 @@ public class TestSandbox {
     void assertConfigUsage(){
         final Config CONFIG = TestEnvFactory.getInstance().getConfig();
 
+        assertAll("Config Test",
+                () -> assertEquals("DEVELOP",CONFIG.getString("TEST_ENV"),"TEST_ENV"),
+                () -> assertEquals("/employee/create",CONFIG.getString("CREATE_EMPLOYEE_ENDPOINT"),"CREATE_EMPLOYEE_ENDPOINT"),
+                () -> assertEquals("develop-admin",CONFIG.getString("ADMIN_LOGIN"),"ADMIN_LOGIN"),
+                () -> assertEquals("develop",CONFIG.getString("ADMIN_NAME"),"ADMIN_NAME"),
+                () -> assertFalse(CONFIG.getBoolean("TOGGLE"), "TOGGLE"),
+                () -> assertEquals(10,CONFIG.getInt("NO_OF_USERS"),"NO_OF_USERS")
+                );
+
         log.info(CONFIG.getString("TEST_ENV"));
         log.info(CONFIG.getString("CREATE_EMPLOYEE_ENDPOINT"));
         log.info(CONFIG.getString("ADMIN_LOGIN"));
         log.info(CONFIG.getString("ADMIN_NAME"));
+        log.info(String.valueOf(CONFIG.getBoolean("TOGGLE")));
+        log.info(String.valueOf(CONFIG.getInt("NO_OF_USERS")));
     }
 }
