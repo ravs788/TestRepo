@@ -15,7 +15,7 @@ This is my core test automation project for automation APIS and UI (on web and m
 
 ### Toolset
 
-- [x] Java
+- [ ] Java
 - [x] Maven
 - [x] Surefire Plugin/Surefire Report Plugin
 - [x] JUnit
@@ -38,7 +38,7 @@ This is my core test automation project for automation APIS and UI (on web and m
 ## Objectives
 
 - [ ] Prepare a base framework.
-- [ ] Add to CI/CD pipeline.
+- [x] Add to CI/CD pipeline.
 - [ ] Trigger automatically on changes in source code.
 - [ ] Easy to maintain, understand and scale.
 - [ ] Speed up execution time wherever possible.

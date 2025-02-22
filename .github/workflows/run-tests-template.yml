@@ -6,7 +6,7 @@ on:
       tests-to-exclude:
         required: false
         type: string
-        default: "flaky,failing"
+        default: "flaky, failing"
       tests-to-include:
         required: true
         type: string
@@ -14,7 +14,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -22,8 +21,8 @@ jobs:
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
-          distribution: 'temurin'
+          java-version: "21"
+          distribution: "temurin"
           cache: maven
 
       - name: Unlock secrets
@@ -32,4 +31,4 @@ jobs:
           GIT_CRYPT_KEY: ${{ secrets.GIT_CRYPT_KEY }}
 
       - name: Build with Maven
-        run: mvn -DexcludedGroups=${{ inputs.tests-to-exclude}} -Dgroups=${{ inputs.tests-to-include}} -B package --file pom.xml
+        run: mvn -DexcludedGroups="${{ inputs.tests-to-exclude}}" -Dgroups="${{ inputs.tests-to-include}}" -B package --file pom.xml
