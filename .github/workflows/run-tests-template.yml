@@ -11,18 +11,6 @@ on:
         required: true
         type: string
         default:
-#    secrets:
-#      token:
-#        required: true
-
-#jobs:
-#  triage:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/labeler@v4
-#        with:
-#          repo-token: ${{ secrets.token }}
-#          configuration-path: ${{ inputs.config-path }}
 
 jobs:
   build:
