@@ -16,5 +16,5 @@ jobs:
   call-workflow-passing-data:
     uses: ./.github/workflows/run-tests-template.yml
     with:
-      tests-to-include: "smoke"
+      tests-to-include: ""
     secrets: inherit
