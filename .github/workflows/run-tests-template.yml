@@ -6,7 +6,7 @@ on:
       tests-to-exclude:
         required: false
         type: string
-        default: "flaky |failing"
+        default: "flaky,failing"
       tests-to-include:
         required: true
         type: string
