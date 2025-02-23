@@ -21,6 +21,7 @@ on:
           - 'smoke'
           - 'flaky'
           - 'failing'
+          - 'flaky, failing'
       tests-to-exclude:
         description: 'Tag of tests to exclude'
         required: false
@@ -31,6 +32,7 @@ on:
           - 'smoke'
           - 'flaky'
           - 'failing'
+          - 'flaky, failing'
       test-environment:
         description: 'Test Enviroment'
         required: false
