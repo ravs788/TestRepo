@@ -2,13 +2,14 @@ import com.typesafe.config.Config;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Tag;
 import org.ravs788.config.TestEnvFactory;
-import org.ravs788.config.annotations.SmokeTest;
+import org.ravs788.annotations.SmokeTest;
+import setup.TestSetup;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @Tag("service-B")
 @Slf4j
-public class TestServiceB {
+public class TestServiceB extends TestSetup {
 
     @SmokeTest
     void assertThatTrueIsTrue(){

@@ -1,4 +1,4 @@
-package org.ravs788.config.annotations;
+package org.ravs788.annotations;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-@Tag("flaky")
+@Tag("smoke")
 @Test
-public @interface FlakyTest {
+public @interface SmokeTest {
 }
