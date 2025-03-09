@@ -20,8 +20,10 @@
         <log4j.version>2.24.3</log4j.version>
         <lombok.version>1.18.36</lombok.version>
         <typesafe.config.version>1.4.3</typesafe.config.version>
-        <jackson.version>2.18.2</jackson.version>
+        <jackson.version>2.17.0</jackson.version>
         <rest-assured-version>5.5.1</rest-assured-version>
+        <elasticsearch.version>8.17.3</elasticsearch.version>
+        <jakarta.json.api.version>2.0.1</jakarta.json.api.version>
     </properties>
     <build>
         <pluginManagement>
@@ -106,6 +108,15 @@
             <artifactId>rest-assured</artifactId>
             <version>${rest-assured-version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>co.elastic.clients</groupId>
+            <artifactId>elasticsearch-java</artifactId>
+            <version>${elasticsearch.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.json</groupId>
+            <artifactId>jakarta.json-api</artifactId>
+            <version>${jakarta.json.api.version}</version>
+        </dependency>
     </dependencies>
 </project>
