@@ -14,6 +14,7 @@ import org.ravs788.extensions.TimingExtension;
 
 import java.security.cert.Extension;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 @Slf4j
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -22,7 +23,7 @@ import java.time.LocalDateTime;
 @Data
 public class TestRunMetaData {
     private static  final String PROJECT = "TestProject";
-    private static  final String TEST_RUN_TIME = LocalDateTime.now().toString();
+    private static  final String TEST_RUN_TIME = LocalDateTime.now(ZoneId.of("UTC")).toString();
     private static  final String TRIGGERED_BY = getTriggeredBy();
 
     private String project;
