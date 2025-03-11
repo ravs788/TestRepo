@@ -25,6 +25,7 @@
         <elasticsearch.version>8.17.3</elasticsearch.version>
         <jakarta.json.api.version>2.0.1</jakarta.json.api.version>
         <faker.version>1.0.2</faker.version>
+
     </properties>
     <build>
         <pluginManagement>
