@@ -96,6 +96,11 @@ public class TestRunMetaData {
     }
 
     private static String getName(){
-        return Faker.instance().funnyName().name();
+        Config config = TestEnvFactory.getInstance().getConfig();
+        if(config.getString("RUN_NAME").isEmpty()) {
+            return Faker.instance().funnyName().name();
+        } else {
+            return config.getString("RUN_NAME");
+        }
     }
 }
