@@ -10,12 +10,12 @@ name: Run tests on creating PR
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   call-workflow-passing-data:
     uses: ./.github/workflows/run-tests-template.yml
     with:
       tests-to-include: "smoke"
-      run-name: ""${{ github.event.pull_request.title }}"
+      run-name: "${{ github.event.pull_request.title }}"
     secrets: inherit
