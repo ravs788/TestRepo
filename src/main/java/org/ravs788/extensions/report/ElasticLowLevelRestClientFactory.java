@@ -55,7 +55,7 @@ public class ElasticLowLevelRestClientFactory {
     private static RestClient getRestClientForLocalhostHTTPS(){
         final String ELASTIC_HOST = CONFIG.getString("ON_LOCALHOST_SECURE.ELASTIC_HOST");
         final int ELASTIC_PORT = CONFIG.getInt("ON_LOCALHOST_SECURE.ELASTIC_PORT");
-        final String ELASTIC_FINGERPRINT = CONFIG.getString("ON_CLOUD.ELASTIC_FINGERPRINT");
+        final String ELASTIC_FINGERPRINT = CONFIG.getString("ON_LOCALHOST_SECURE.ELASTIC_FINGERPRINT");
         SSLContext sslContext = TransportUtils.sslContextFromCaFingerprint(ELASTIC_FINGERPRINT);
 
         final String ELASTIC_LOGIN = CONFIG.getString("ON_LOCALHOST_SECURE.ELASTIC_LOGIN");
