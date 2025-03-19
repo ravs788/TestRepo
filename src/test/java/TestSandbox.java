@@ -1,10 +1,12 @@
 import com.typesafe.config.Config;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.ravs788.config.TestEnvFactory;
 import org.ravs788.annotations.FailingTest;
 import org.ravs788.annotations.FlakyTest;
 import org.ravs788.annotations.SmokeTest;
+
 import setup.TestSetup;
 
 import java.util.Random;
