@@ -69,4 +69,6 @@ public class TestSandbox extends TestSetup {
     log.info(CONFIG.getString("ADMIN_LOGIN"));
     log.info(CONFIG.getString("ADMIN_NAME"));
     log.info(String.valueOf(CONFIG.getBoolean("TOGGLE")));
-    log.info(String.valueOf(CONFIG.getInt("NO_OF_USERS")));}}
+    log.info(String.valueOf(CONFIG.getInt("NO_OF_USERS")));
+  }
+}
