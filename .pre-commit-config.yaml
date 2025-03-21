@@ -1,11 +1,14 @@
 repos:
-  -   repo: https://github.com/pre-commit/pre-commit-hooks
-      rev: v5.0.0
-      hooks:
-        -   id: trailing-whitespace
-        -   id: end-of-file-fixer
-        -   id: check-yaml
-        -   id: check-added-large-files
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: check-json
+      - id: check-xml
+      - id: pretty-format-json
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
   - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
     rev: 9b0d3648d0f137ca9fd3c0be901de6a80c55c3b0
     hooks:

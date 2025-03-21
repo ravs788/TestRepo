@@ -6,28 +6,28 @@ import org.junit.jupiter.api.extension.BeforeTestExecutionCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
 @Slf4j
-public class TimingExtension implements BeforeTestExecutionCallback, AfterTestExecutionCallback{
-    private static ThreadLocal<Double> testExecutionTimeThread = new ThreadLocal<>();
-    private long startTimeMethod;
+public class TimingExtension implements BeforeTestExecutionCallback, AfterTestExecutionCallback {
+  private static ThreadLocal<Double> testExecutionTimeThread = new ThreadLocal<>();
+  private long startTimeMethod;
 
-    public static Double getTestExecutionTimeThread(){
-        return testExecutionTimeThread.get();
-    }
+  public static Double getTestExecutionTimeThread() {
+    return testExecutionTimeThread.get();
+  }
 
-    public static void removeTestExecutionTimeThread(){
-        testExecutionTimeThread.remove();
-    }
+  public static void removeTestExecutionTimeThread() {
+    testExecutionTimeThread.remove();
+  }
 
-    @Override
-    public void beforeTestExecution(ExtensionContext context){
-        startTimeMethod = System.currentTimeMillis();
-    }
+  @Override
+  public void beforeTestExecution(ExtensionContext context) {
+    startTimeMethod = System.currentTimeMillis();
+  }
 
-    @Override
-    public void afterTestExecution(ExtensionContext context) throws Exception {
-        double duration = (System.currentTimeMillis() - startTimeMethod) / 1000.0;
-        log.info("Test {} took {} Seconds.",context.getRequiredTestMethod().getName(), duration);
+  @Override
+  public void afterTestExecution(ExtensionContext context) throws Exception {
+    double duration = (System.currentTimeMillis() - startTimeMethod) / 1000.0;
+    log.info("Test {} took {} Seconds.", context.getRequiredTestMethod().getName(), duration);
 
-        testExecutionTimeThread.set(duration);
-    }
+    testExecutionTimeThread.set(duration);
+  }
 }
