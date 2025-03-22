@@ -8,10 +8,9 @@ import org.ravs788.annotations.FailingTest;
 import org.ravs788.annotations.FlakyTest;
 import org.ravs788.annotations.SmokeTest;
 import org.ravs788.config.TestEnvFactory;
-import setup.TestSetup;
 
 @Slf4j
-public class TestSandbox extends TestSetup {
+public class TestSandbox {
 
   @SmokeTest
   void assertThatTrueIsTrue() throws InterruptedException {
